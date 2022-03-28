@@ -1,7 +1,7 @@
 
 const moment = require('moment')
 const axios = require('axios')
-const conexao = require('../infraestrutura/conexao')
+const conexao = require('../infraestrutura/database/conexao')
 
 
 class Atendimento {
@@ -34,6 +34,7 @@ class Atendimento {
       const atendimentoDatado = { ...atendimento, dataCriacao, data }
 
       const sql = 'INSERT INTO Atendimentos SET ?'
+
       conexao.query(sql, atendimentoDatado, (erro, resultados) => {
         if (erro) {
           res.status(400).json(erro)
