@@ -1,4 +1,4 @@
-const conexao = requeire('./conexao')
+const conexao = require('./conexao')
 
 const executaQuery = (query, parametros = '') => {
   return new Promise((resolve, reject) => {
@@ -12,3 +12,5 @@ const executaQuery = (query, parametros = '') => {
   })
 
 }
+
+module.exports = executaQuery
